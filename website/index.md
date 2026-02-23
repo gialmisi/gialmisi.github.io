@@ -2,8 +2,8 @@
 hide:
  - navigation
 ---
-![Image title](assets/giovanni.jpg){ align=right width="25%" }
 # Giovanni Misitano, PhD
+![Image title](assets/giovanni_2025.jpg){ align=right width="35%" }
 We have all kinds of fancy AI tools that can predict this and that, but are
 complete black-boxes for a layman. When it comes to making actual decisions
 based on the output of these tools, we lack decision-support and grounds to
