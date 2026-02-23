@@ -20,7 +20,7 @@ without relying on black-boxes.
 
 ## About me
 I am currently employed as a post-doctoral researcher at the University of
-Jyväskylä, Finland, in the Multiobjectove Optimization Group. I specialize in
+Jyväskylä, Finland, in the [Multiobjective Optimization Group](https://optgroup.it.jyu.fi/). I specialize in
 methods and tools for multiobjective optimization. These methods can be applied
 anywhere where data is available, there are conflicting objectives to be
 optimized, and there are decision makers with relevant domain expertise.  That
@@ -31,32 +31,25 @@ and stakeholders alike. I also have a deep interest in developing user
 interfaces, and the user experience in general from a cognition perspective. 
 
 I am also a main contributor and maintainer of DESDEO. DESDEO is an open-source
-Python framework for interactive multiobjective optimization. Our research group
-is currently overhauling the framework, working towards a ''DESDEO 2.0.'' This
-version will be a full-stack solution, with a backend containing the algorithmic
-implementations of various interactive multiobjective optimization methods, both
-multi-criteria decision-making methods and stochastic evolutionary methods; an
-web application programming interface (API) with database and user session
-management to connect the backend over the web to existing and custom
-interfaces; and a frontend, a graphical web-based interface designed by us.
-This is a huge endeavor, but it is fueled by our group's decased of collective
-experience in researching and developing multiobjective optimization methods.
+Python and TypeScript full-stack framework for interactive multiobjective
+optimization. It includes a backend containing algorithmic implementations of
+various interactive multiobjective optimization methods, both multi-criteria
+decision-making methods and stochastic evolutionary methods; a web application
+programming interface (API) with database and user session management to connect
+the backend over the web to existing and custom interfaces; and a frontend, a
+graphical web-based interface. The web-API and web-GUI are still under
+development. DESDEO is fueled by our group's decades of collective experience in
+researching and developing multiobjective optimization methods.
 
-DESDEO can offer huger opportunities in the future for academics and industry in
-the future for tackling data-based problems with multiple and conflicting
-objectives functions to be either minimized or maximized. DESDEO can very much
-function as the connecting piece between all the fancy AI tools available these
-days, and making actual decisions based on the tools' output.
+DESDEO can offer huge opportunities for academics and industry for tackling
+data-based problems with multiple and conflicting objective functions to be
+either minimized or maximized. DESDEO can very much function as the connecting
+piece between all the fancy AI tools available these days, and making actual
+decisions based on the tools' output.
 
-Check out the development of the new version of DESDEO [here](https://github.com/industrial-optimization-group/DESDEO/tree/desdeo2).
+Check out DESDEO on [GitHub](https://github.com/industrial-optimization-group/DESDEO).
 In the documentation, there is also a primer on what multiobjective optimization is,
-check the primer [here](https://desdeo.readthedocs.io/en/desdeo2/tutorials/moo_primer/).
-
-!!! note
-
-    Everything under the `desdeo2` branch is under active development and subject to sudden, and
-    possibly drastic, changes. We will release a more stable version going into the latter half
-    of the year 2024.
+check the primer [here](https://desdeo.readthedocs.io/en/latest/tutorials/moo_primer/).
 
 ## Contents
 <div class="grid cards" markdown>
@@ -65,7 +58,7 @@ check the primer [here](https://desdeo.readthedocs.io/en/desdeo2/tutorials/moo_p
 
     ---
 
-    Check my past and current research experience and projects I am, and been,
+    Check my past and current research experience and projects I am, and have been,
     involved in.
 
     [:octicons-arrow-right-24: Research Experience](./research.md)
@@ -100,7 +93,7 @@ check the primer [here](https://desdeo.readthedocs.io/en/desdeo2/tutorials/moo_p
     ---
 
     Have a look at my conference presentations, invited talks and lectures,
-    posters, and more. Slides and recording are available for many of my
+    posters, and more. Slides and recordings are available for many of my
     past dissemination activities!
 
     [:octicons-arrow-right-24: Dissemination](./dissemination.md)
