@@ -1,0 +1,239 @@
+%%
+%%   CV generated from YAML data using the Research Council of Finland template.
+%%
+\documentclass[a4paper,12pt]{article}
+
+% Language support (including Nordic letters)
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Math support
+\usepackage[intlimits]{amsmath}
+\usepackage{amsthm}
+
+% Symbol support
+\usepackage{amssymb}
+\usepackage{eurosym}
+
+% Enabling pdf
+\usepackage[pdftex]{graphicx}
+\usepackage{xcolor}
+
+% Item list extras for reduced spacing between items
+\usepackage{enumitem}
+\setlist{nosep}
+
+% Hyperlink support (only for external hyperlinks)
+\usepackage[implicit=false]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
+
+%-----------------------------------------------------
+% ACADEMY SETTINGS: DO NOT ALTER THESE SETTINGS!
+%-----------------------------------------------------
+
+% ONLY CALIBRI/CARLITO ARE ALLOWED AS FONT, FONT SIZE 12 PT DEFINED ABOVE.
+\usepackage[sfdefault]{carlito}
+
+% LINE SPACING 1 SUPPORT AND SET SPACE
+\usepackage{setspace}
+\singlespacing
+
+% PAGE MARGIN SUPPORT AND SET PAGE MARGINS 20 MM
+\usepackage[left=20mm, top=20mm, bottom=20mm, right=20mm]{geometry}
+
+% SETTING SPACING FOR SECTION, SUBSECTION AND PARAGRAPH
+\usepackage{titlesec}
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titlespacing{\section}{0 cm}{6pt}{0pt}
+\titlespacing{\subsection}{0 cm}{6pt}{0pt}
+\setlength{\parskip}{6pt}
+
+% ALIGNING TEXT TO LEFT
+\raggedright
+
+% SETS PAGE NUMBERS AND HEADER
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyfoot{}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\fancyplain{}{\thepage}({\pageref{lastpage}}) }
+
+%-----------------------------------------------------
+
+\begin{document}
+
+%% Personal details
+\section*{Personal details and the date of the CV}
+
+((( personal.name ))) \\
+ORCID: \href{https://orcid.org/((( personal.orcid )))}{((( personal.orcid )))} \\
+Date of CV: \today
+
+%% Degrees
+\section*{Degrees}
+
+\begin{itemize}
+((*- for edu in educations *))
+\item ((( edu.year ))), ((( edu.degree ))), ((( edu.institution ))), Finland
+((*- endfor *))
+\end{itemize}
+
+((*- if other_education *))
+%% Other education and expertise
+\section*{Other education and expertise}
+
+\begin{itemize}
+((*- for edu in other_education *))
+\item ((( edu.date ))), ((( edu.name ))), ((( edu.provider ))).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+%% Language skills
+\section*{Language skills}
+
+\begin{itemize}
+((*- for lang in languages *))
+\item ((( lang.language ))): ((( lang.level )))
+((*- endfor *))
+\end{itemize}
+
+%% Current employment
+\section*{Current employment}
+
+((*- set current = positions[0] *))
+((( current.period ))), ((( current.position ))), ((( current.organization )))
+
+%% Previous work experience
+\section*{Previous work experience}
+
+\begin{itemize}
+((*- for pos in positions[1:] *))
+\item ((( pos.period ))), ((( pos.position ))), ((( pos.organization )))
+((*- endfor *))
+\end{itemize}
+
+((*- if career_breaks *))
+%% Career breaks
+\section*{Career breaks}
+
+\begin{itemize}
+((*- for cb in career_breaks *))
+\item ((( cb.period ))), ((( cb.type )))((*- if cb.duration *)), ((( cb.duration )))((*- endif *)).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+%% Research funding and grants
+\section*{Research funding and grants}
+
+\begin{itemize}
+((*- for fund in fundings *))
+\item ((( fund.date ))), ((( fund.name ))), ((( fund.organization ))).
+((*- endfor *))
+((*- for proj in projects *))
+\item ((( proj.period ))), ((( proj.name ))) (project no. ((( proj.id )))), ((( proj.organization ))). Role: researcher.
+((*- endfor *))
+\end{itemize}
+
+%% Research output
+\section*{Research output}
+
+\begin{itemize}
+((*- for output in outputs *))
+\item ((( output.description | replace("DESDEO", "\\href{" ~ output.url ~ "}{DESDEO}") )))
+((*- endfor *))
+\end{itemize}
+
+%% Research supervision and leadership experience
+\section*{Research supervision and leadership experience}
+
+\begin{itemize}
+((*- for sup in supervisions *))
+\item ((( sup.type ))), ((( sup.student ))), ``((( sup.title )))'', ((( sup.institution ))), ((( sup.period ))).
+((*- endfor *))
+\end{itemize}
+
+%% Teaching merits
+\section*{Teaching merits}
+
+\begin{itemize}
+((*- for teach in teachings *))
+\item ((( teach.period ))), ((( teach.position ))), ((( teach.course ))), ((( teach.institution ))).
+((*- endfor *))
+\end{itemize}
+
+%% Awards and honours
+\section*{Awards and honours}
+
+\begin{itemize}
+((*- for reward in rewards *))
+\item ((( reward.date ))), ((( reward.name ))), ((( reward.organization ))).
+((*- endfor *))
+\end{itemize}
+
+%% Other key academic merits
+\section*{Other key academic merits}
+
+\textbf{Positions of trust and memberships in scientific organizations:}
+\begin{itemize}
+((*- for pos in activity_positions *))
+\item ((( pos.period ))), ((( pos.position ))), ((( pos.organization ))).
+((*- endfor *))
+\end{itemize}
+
+\textbf{Invited talks:}
+\begin{itemize}
+((*- for inv in invitations *))
+\item ((( inv.date ))), ``((( inv.title )))'', ((( inv.event ))).
+((*- endfor *))
+\end{itemize}
+
+%% Scientific and societal impact
+\section*{Scientific and societal impact}
+
+\begin{itemize}
+((*- for tut in tutorials *))
+\item ((( tut.date ))), ``((( tut.title )))'', ((( tut.event ))).
+((*- endfor *))
+\end{itemize}
+
+((*- if other_merits *))
+%% Other merits
+\section*{Other merits}
+
+\begin{itemize}
+((*- for merit in other_merits *))
+\item ((*- if merit.date *))((( merit.date ))), ((*- endif *))((( merit.description ))).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+%% Publications
+\section*{Publications}
+
+\textbf{Peer-reviewed publications:}
+\begin{enumerate}
+((*- for pub in publications *))
+\item ((( pub.authors ))), ``((( pub.title )))'', \textit{((( pub.journal )))}, ((( pub.year ))).
+((*- endfor *))
+\end{enumerate}
+((*- if manuscripts *))
+
+\textbf{Manuscripts under review:}
+\begin{enumerate}
+((*- for ms in manuscripts *))
+\item ((( ms.authors ))), ``((( ms.title )))'', \textit{((( ms.journal )))}, ((( ms.status ))).
+((*- endfor *))
+\end{enumerate}
+((*- endif *))
+
+%% Page counter for header
+\label{lastpage}
+
+\end{document}

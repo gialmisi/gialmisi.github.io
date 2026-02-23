@@ -8,6 +8,7 @@ projects:
       work package, I continue to research the concept and application of
       explainable and interactive multiobjective optimization, a topic I
       explored in my doctoral thesis.
+    include: [website, cv]
   - name: "Logistics order-supply chain modelling and optimization"
     organization: University of Jyväskylä, Tietoevry
     period: "2021 - 2024"
@@ -15,6 +16,7 @@ projects:
       Modelling and solving multiobjective optimization problems related to
       order-supply chains. Due to confidential reasons, no more details can be
       given at this time.
+    include: [website]
   - name: "DAEMON"
     organization: Research Council of Finland
     id: 322221
@@ -28,14 +30,16 @@ projects:
       contributed to studies related to lot-sizing, and researching the semantic
       distances of icons in user interfaces for interactive multiobjective
       optimization methods.
+    include: [website, cv]
   - name: "DESDEO"
     organization: Research Council of Finland
     id: 287496
     period: "2015 - 2019"
     details: >
       I contributed to the DESDEO framework, spearheading its re-implementation.
-      I focused on the tools to model multiobjective optimization problems, and 
+      I focused on the tools to model multiobjective optimization problems, and
       on implementing scalarization-based interactive multiobjective optimization methods.
+    include: [website, cv]
 
 visits:
   - institution: "Delft University of Technology"
@@ -46,6 +50,7 @@ visits:
       Research focused on analyzing interview results for a study
       to understand the explainability needs of analysts and decision
       makers in multiobjective optimization.
+    include: [website, cv]
 
 positions:
   - position: Post-doctoral Researcher
@@ -56,6 +61,7 @@ positions:
       My main research interest is continuing the line of work I established in
       my doctoral thesis, where I study and apply the concept of explainability
       in interactive multiobejective optimization methods.
+    include: [website, cv]
   - position: Doctoral Researcher
     organization: Multiobjective Optimization Group, University of Jyväskylä, Finland
     period: 2020 - 2024
@@ -66,14 +72,16 @@ positions:
       interactive multiobjective optimization methods. The goal of the research
       was to improve the decision-support capabilities of interactive
       multiobjective optimization methods.
+    include: [website, cv]
   - position: Research Assistant
     organization: Multiobjective Optimization Group, University of Jyväskylä, Finland
     period: 2019 - 2020
     details: >
       I mainly worked on my master's thesis and on DESDEO, the open source
-      Python software framework for interactive multiobjective optimization. 
+      Python software framework for interactive multiobjective optimization.
       Others tasks involved web-development and supporting the research group
       members in various technical tasks.
+    include: [website, cv]
   - position: Trainee
     organization: CERN, Switzerland
     period: summer of 2018
@@ -83,6 +91,7 @@ positions:
       I utilized Keras to build and train a deep convoluted neural
       network, and utilized real experiment data to train the model
       utilizing supervised learning.
+    include: [website, cv]
   - position: Trainee
     organization: Center for Underground Physics, Finland
     period: summer of 2017
@@ -93,6 +102,7 @@ positions:
       worked one basic upkeep and maintenance work, including the
       setup of a working gas circulation system for a set of pixel matrix
       detectors utilizing very limited resources.
+    include: [website, cv]
   - position: Trainee
     organization: LNGS (*Laboratori Nazionali del Gran Sasso), Italy
     period: summer of 2016
@@ -102,3 +112,10 @@ positions:
       involving computer vision and machine learning, where I built a program to
       read the output of a webcam and infer the digits on a 8-segment
       temperature gauge.
+    include: [website, cv]
+
+outputs:
+  - name: "DESDEO"
+    description: "Lead developer and maintainer of the DESDEO open-source software framework for interactive multiobjective optimization."
+    url: "https://github.com/industrial-optimization-group/DESDEO"
+    include: [cv]

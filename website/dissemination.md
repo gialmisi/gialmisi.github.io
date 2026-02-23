@@ -5,7 +5,7 @@ hide:
 # Dissemination
 
 ## Conferences
-{% for conference in load_data('disseminations.yaml')['conferences'] %}
+{% for conference in load_data_for('disseminations.yaml', 'website')['conferences'] %}
 ### {{ conference.title }}
 *{{ conference.event }}, {{ conference.date }}*<br>
 {% if conference.slides %}[Slides]({{ conference.slides }}){% endif %}{% if conference.recording %}{% if conference.slides %} | {% endif %}[Recording]({{ conference.recording }})
@@ -13,7 +13,7 @@ hide:
 {% endfor %}
 
 ## Invitations
-{% for invitation in load_data('disseminations.yaml')['invitations'] %}
+{% for invitation in load_data_for('disseminations.yaml', 'website')['invitations'] %}
 ### {{ invitation.title }}
 *{{ invitation.event }}, {{ invitation.date }}*<br>
 {% if invitation.slides %}[Slides]({{ invitation.slides }}){% endif %}{% if invitation.recording %}{% if invitation.slides %} | {% endif %}[Recording]({{ invitation.recording }})
@@ -21,7 +21,7 @@ hide:
 {% endfor %}
 
 ## Presentations
-{% for presentation in load_data('disseminations.yaml')['presentations'] %}
+{% for presentation in load_data_for('disseminations.yaml', 'website')['presentations'] %}
 ### {{ presentation.title }}
 *{{ presentation.event }}, {{ presentation.date }}*<br>
 {% if presentation.slides %}[Slides]({{ presentation.slides }}){% endif %}{% if presentation.recording %}{% if presentation.slides %} | {% endif %}[Recording]({{ presentation.recording }})
@@ -29,14 +29,14 @@ hide:
 {% endfor %}
 
 ## Tutorials
-{% for tutorial in load_data('disseminations.yaml')['tutorials'] %}
+{% for tutorial in load_data_for('disseminations.yaml', 'website')['tutorials'] %}
 ### {{ tutorial.title }}
 *{{ tutorial.event }}, {{ tutorial.date }}*<br>
 {% if tutorial.slides %}[Slides]({{ tutorial.slides }}){% endif %}{% if tutorial.recording %}{% if tutorial.slides %} | {% endif %}[Recording]({{ tutorial.recording }}){% endif %}{% if tutorial.link %}{% if tutorial.slides or tutorial.recording %} | {% endif %}[Link]({{ tutorial.link }}){% if tutorial.link_note %} ({{ tutorial.link_note }}){% endif %}{% endif %}
 {% endfor %}
 
 ## Posters
-{% for poster in load_data('disseminations.yaml')['posters'] %}
+{% for poster in load_data_for('disseminations.yaml', 'website')['posters'] %}
 ### {{ poster.title }}
 *{{ poster.event }}, {{ poster.date }}*<br>
 {% if poster.poster %}[Poster]({{ poster.poster }})

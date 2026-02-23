@@ -1,0 +1,25 @@
+supervisions:
+  - type: "Doctoral thesis (co-supervisor)"
+    student: "Nieminen M."
+    title: "Agents in Interactive Multiobjective Optimization"
+    institution: "University of Jyväskylä, Finland"
+    period: "2024, ongoing"
+    include: [cv]
+  - type: "Doctoral thesis (co-supervisor)"
+    student: "Saboori G."
+    title: "Anti-fragile and sustainable decision-making in energy supply chains under deep uncertainty"
+    institution: "University of Jyväskylä, Finland"
+    period: "2024, ongoing"
+    include: [cv]
+  - type: "Master's thesis"
+    student: "Nieminen M."
+    title: "Navigation Methods in Multiobjective Optimization"
+    institution: "University of Jyväskylä, Finland"
+    period: "2024"
+    include: [cv]
+  - type: "Master's thesis"
+    student: "Alaoutinen M."
+    title: "Developing interactive data visualizations for web UIs"
+    institution: "University of Jyväskylä, Finland"
+    period: "2021"
+    include: [cv]

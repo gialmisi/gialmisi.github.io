@@ -6,12 +6,14 @@ positions:
       As a member of the Faculty Council, I contribute to the
       strategic planning and decision-making at the Faculty of
       Information Technology.
+    include: [website, cv]
   - position: Alternate Member of the University Collegium
     organization: University of Jyväskylä
     period: "2026, ongoing"
     details: >
       As an alternate member of the University Collegium, I participate
       in the highest decision-making body of the university.
+    include: [website, cv]
   - position: EURO Representative
     organization: The Finnish Operations Research Society, Association of European Operational Research Societies
     period: 2024, ongoing
@@ -20,12 +22,14 @@ positions:
       an international level. I take part in the yearly board meeting of the
       Association of European Operational Research Societies (EURO). I hold the
       right to vote in the yearly board meeting of EURO.
+    include: [website, cv]
   - position: Treasurer
     organization: The Finnish Operations Research Society
     period: "2024, ongoing"
     details: >
       As treasurer, I am responsible for the finances of the society.
       I am also a member of the society's current board.
+    include: [website, cv]
   - position: President
     organization: The Finnish Operations Research Society
     period: 2023
@@ -35,6 +39,7 @@ positions:
       practitioners, and enthusiast residing in Finland. I was also the main
       coordinator of the FORS50 conference, which was held at the University of
       Jyväskylä in honor of the 50-year-anniversary of the society.
+    include: [website, cv]
 
 rewards:
   - name: "Good Dissertation Award (Hyvä väitöskirja -palkinto)"
@@ -45,12 +50,14 @@ rewards:
       dissertation that brings together research methods and results in an
       insightful and versatile way. The recipient is nominated by the
       University of Jyväskylä Science Council.
+    include: [website, cv]
   - name: "Runner-up, MCDM Junior Researcher Best Paper Award"
     date: 2025
     organization: "2025 INFORMS Annual Meeting, Atlanta, United States"
     details: >
       Runner-up in the MCDM Junior Researcher Best Paper competition
       at the 2025 INFORMS Annual Meeting.
+    include: [website, cv]
   - name: "Finalist in the PhD Olympiad"
     date: 2025
     organization: "8th ECCOMAS Young Investigators Conference and PhD Olympiad 2025, Pescara, Italy"
@@ -58,6 +65,7 @@ rewards:
       Selected as a finalist in the PhD Olympiad at the 8th ECCOMAS Young
       Investigators Conference. Presented research on the role and potential
       of explainability in interactive multiobjective optimization.
+    include: [website, cv]
   - name: >-
       Award for best pitch related to information and communication technology or
       telecommunications
@@ -69,6 +77,7 @@ rewards:
       live during the Millennium Innovation Forum 2022.  The pitch I gave during
       the event can be viewed on
       [YouTube](https://www.youtube.com/watch?v=Rt1YKWaNG94).
+    include: [website, cv]
 
 fundings:
   - name: "Full scholarship from the Vilho, Yrjö and Kalle Väisälä Fund"
@@ -77,3 +86,4 @@ fundings:
     details: >
       The scholarship consisted of 28,600 euros to work full time on my PhD.
       The grant covered a year's worth of full-time work.
+    include: [website, cv]

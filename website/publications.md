@@ -3,7 +3,7 @@ hide:
  - navigation
 ---
 # Publications
-{% for publication in load_data('publications.yaml')['publications'] %}
+{% for publication in load_data_for('publications.yaml', 'website')['publications'] %}
 ### {{ publication.title }}
 *{{ publication.authors }}*<br>
 {{ publication.journal }}, {{ publication.year }}.<br>

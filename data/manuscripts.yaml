@@ -1,0 +1,6 @@
+manuscripts:
+  - title: "Exploring the Role of Decision Variables in Multiobjective Optimization through Explainable AI"
+    authors: "M. Emmerich, S. Bandaru, G. Misitano, K. Miettinen"
+    journal: "Expert Systems with Applications"
+    status: "manuscript under review"
+    include: [cv]
