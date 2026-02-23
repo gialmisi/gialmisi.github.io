@@ -4,3 +4,8 @@ manuscripts:
     journal: "Expert Systems with Applications"
     status: "manuscript under review"
     include: [cv]
+  - title: "Multi-Objective Optimization: A Thematic Analysis of Analysts' Perspectives on Decision-Support"
+    authors: "Z. Osika, G. Misitano, J. Zatarain-Salazar, P. K. Murukannaiah"
+    journal: "Journal of Multi-Criteria Decision Analysis"
+    status: "manuscript submitted"
+    include: [cv]

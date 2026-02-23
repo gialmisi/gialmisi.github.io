@@ -12,6 +12,12 @@ supervisions:
     period: "2024, ongoing"
     include: [cv]
   - type: "Master's thesis"
+    student: "Kärkkäinen V."
+    title: "Mass customization of multiobjective optimization and the optimization tool of forest management plans"
+    institution: "University of Jyväskylä, Finland"
+    period: "2025"
+    include: [cv]
+  - type: "Master's thesis"
     student: "Nieminen M."
     title: "Navigation Methods in Multiobjective Optimization"
     institution: "University of Jyväskylä, Finland"
