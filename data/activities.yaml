@@ -1,4 +1,17 @@
 positions:
+  - position: Member of the Faculty Council
+    organization: Faculty of Information Technology, University of Jyväskylä
+    period: "2026, ongoing"
+    details: >
+      As a member of the Faculty Council, I contribute to the
+      strategic planning and decision-making at the Faculty of
+      Information Technology.
+  - position: Alternate Member of the University Collegium
+    organization: University of Jyväskylä
+    period: "2026, ongoing"
+    details: >
+      As an alternate member of the University Collegium, I participate
+      in the highest decision-making body of the university.
   - position: EURO Representative
     organization: The Finnish Operations Research Society, Association of European Operational Research Societies
     period: 2024, ongoing
@@ -24,6 +37,14 @@ positions:
       Jyväskylä in honor of the 50-year-anniversary of the society.
 
 rewards:
+  - name: "Good Dissertation Award (Hyvä väitöskirja -palkinto)"
+    date: 2025
+    organization: "University of Jyväskylä Foundation"
+    details: >
+      The award, consisting of 3000 euros, is given for a meritorious
+      dissertation that brings together research methods and results in an
+      insightful and versatile way. The recipient is nominated by the
+      University of Jyväskylä Science Council.
   - name: "Runner-up, MCDM Junior Researcher Best Paper Award"
     date: 2025
     organization: "2025 INFORMS Annual Meeting, Atlanta, United States"
