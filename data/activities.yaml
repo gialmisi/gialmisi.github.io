@@ -24,6 +24,19 @@ positions:
       Jyväskylä in honor of the 50-year-anniversary of the society.
 
 rewards:
+  - name: "Runner-up, MCDM Junior Researcher Best Paper Award"
+    date: 2025
+    organization: "2025 INFORMS Annual Meeting, Atlanta, United States"
+    details: >
+      Runner-up in the MCDM Junior Researcher Best Paper competition
+      at the 2025 INFORMS Annual Meeting.
+  - name: "Finalist in the PhD Olympiad"
+    date: 2025
+    organization: "8th ECCOMAS Young Investigators Conference and PhD Olympiad 2025, Pescara, Italy"
+    details: >
+      Selected as a finalist in the PhD Olympiad at the 8th ECCOMAS Young
+      Investigators Conference. Presented research on the role and potential
+      of explainability in interactive multiobjective optimization.
   - name: >-
       Award for best pitch related to information and communication technology or
       telecommunications

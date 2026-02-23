@@ -37,6 +37,16 @@ projects:
       I focused on the tools to model multiobjective optimization problems, and 
       on implementing scalarization-based interactive multiobjective optimization methods.
 
+visits:
+  - institution: "Delft University of Technology"
+    location: "Delft, the Netherlands"
+    period: "January - February 2025"
+    details: >
+      Visited the Interactive Intelligence group and HIPPO Lab.
+      Research focused on analyzing interview results for a study
+      to understand the explainability needs of analysts and decision
+      makers in multiobjective optimization.
+
 positions:
   - position: Post-doctoral Researcher
     organization: Multiobjective Optimization Group, University of Jyväskylä, Finland

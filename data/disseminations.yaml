@@ -1,4 +1,16 @@
 conferences:
+  - title: "Towards Explainable Interactive Multiobjective Optimization: R-XIMO"
+    event: "2025 INFORMS Annual Meeting, Atlanta, United States"
+    date: "2025"
+    slides: "data/slides/INFORMS2025.pdf"
+  - title: "The Role and Potential of Explainability in Interactive Multiobjective Optimization"
+    event: "8th ECCOMAS Young Investigators Conference and PhD Olympiad 2025, Pescara, Italy"
+    date: "2025"
+    slides: "data/slides/ECCOMAS2025.pdf"
+  - title: "DESDEO 2.0: The New and Improved Open-source Framework for Interactive Multiobjective Optimization"
+    event: "The EURO 2025 conference, Leeds, United Kingdom"
+    date: "2025"
+    slides: "data/slides/EURO2025.pdf"
   - title: "Hot Off the Press: ​Exploring the Explainable Aspects and Performance of a Learnable Evolutionary Multiobjective Optimization Method"
     event: "GECCO 2024, Melbourne, Australia (remote presentation)"
     date: "2024"
@@ -29,6 +41,10 @@ conferences:
     slides: "data/slides/Doctoral_cruise2021.pdf"
 
 invitations:
+  - title: "Explainable Interactive Multiobjective Optimization: The What, The How, and Why You Should Care"
+    event: "The 1st International Workshop on Explainability and Interpretability in Optimization, Nuremberg, Germany"
+    date: "2025"
+    slides: "data/slides/ExpWorkshop2025.pdf"
   - title: "Explainable multiobjective optimization"
     event: "HIPPO Lab meeting, Delft University of Technology"
     date: "2023"
@@ -63,6 +79,12 @@ posters:
     poster: "data/slides/poster2021.pdf"
 
 tutorials:
+  - title: "Parempia kompromissiratkaisuja ja päätöksiä monitavoiteoptimoinnin avulla"
+    event: "ROBOCOAST EDIH Lyhytkoulutukset"
+    date: "2024"
+    slides: "data/slides/ROBOCOAST_2024.pdf"
+    link: "https://robocoast.eu/kurssi/tehokkaampaa-paatoksentekoa-monitavoiteoptimoinnin-avulla-jyu/"
+    link_note: "in Finnish"
   - title: "DESDEO: The Modular and Open Source Framework for Interactive Multiobjective Optimization"
     event: "DEMO seminar, University of Jyväskylä"
     date: "2021"

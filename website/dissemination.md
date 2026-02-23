@@ -32,8 +32,7 @@ hide:
 {% for tutorial in load_data('disseminations.yaml')['tutorials'] %}
 ### {{ tutorial.title }}
 *{{ tutorial.event }}, {{ tutorial.date }}*<br>
-{% if tutorial.slides %}[Slides]({{ tutorial.slides }}){% endif %}{% if tutorial.recording %}{% if tutorial.slides %} | {% endif %}[Recording]({{ tutorial.recording }})
-{% endif %}
+{% if tutorial.slides %}[Slides]({{ tutorial.slides }}){% endif %}{% if tutorial.recording %}{% if tutorial.slides %} | {% endif %}[Recording]({{ tutorial.recording }}){% endif %}{% if tutorial.link %}{% if tutorial.slides or tutorial.recording %} | {% endif %}[Link]({{ tutorial.link }}){% if tutorial.link_note %} ({{ tutorial.link_note }}){% endif %}{% endif %}
 {% endfor %}
 
 ## Posters

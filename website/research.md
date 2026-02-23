@@ -12,6 +12,13 @@ hide:
 >{{ position.details }}<br>
 {% endfor %}
 
+## Research Visits
+{% for visit in load_data('research.yaml')['visits'] %}
+### {{ visit.institution }}
+*{{ visit.location }}, {{ visit.period }}*<br>
+>{{ visit.details }}<br>
+{% endfor %}
+
 ## Research Projects
 {% for project in load_data('research.yaml')['projects'] %}
 ### {{ project.name }}
