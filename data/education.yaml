@@ -10,6 +10,7 @@ educations:
     institution: "University of Jyväskylä"
     year: "2024"
     url: "http://urn.fi/URN:ISBN:978-952-86-0183-8"
+    include: [website, cv]
   - degree: "MSc, Computer Science"
     details: >-
       I completed my masters specializing in computational science. My master's
@@ -22,6 +23,7 @@ educations:
     institution: "University of Jyväskylä"
     year: "2020"
     url: "http://urn.fi/URN:NBN:fi:jyu-202007065235"
+    include: [website, cv]
   - degree: "BSc, Physics"
     details: >-
       I completed my bachelor of physics focusing on experimental underground
@@ -33,3 +35,4 @@ educations:
     institution: "University of Jyväskylä"
     year: "2016"
     url: "http://urn.fi/URN:NBN:fi:jyu-202005043017"
+    include: [website, cv]
