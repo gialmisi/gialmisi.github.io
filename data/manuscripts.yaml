@@ -9,6 +9,11 @@ manuscripts:
     journal: "Journal of Multi-Criteria Decision Analysis"
     status: "manuscript under review"
     include: [cv]
+  - title: "Energy systems under disruptions: A systematic literature review"
+    authors: "G. Saboori, G. Misitano, S. Atta, E. Baker, B. Shavazipour"
+    journal: "Renewable and sustainable energy reviews"
+    status: "manuscript under review"
+    include: [cv]
   - title: "MAS-XIMO: Multi-Agent System for Explainable Interactive Multiobjective Optimization"
     authors: "M. Nieminen, G. Misitano, M. Emmerich, K. Miettinen, B. Afsar"
     journal: "Autonomous Agents and Multi-Agent Systems"
@@ -34,3 +39,4 @@ manuscripts:
     journal: "Journal of Open Source Software"
     status: "manuscript under preparation"
     include: [cv]
+
