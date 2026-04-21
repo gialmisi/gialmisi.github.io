@@ -119,3 +119,7 @@ outputs:
     description: "Lead developer and maintainer of the DESDEO open-source software framework for interactive multiobjective optimization."
     url: "https://github.com/industrial-optimization-group/DESDEO"
     include: [cv]
+  - name: "desdeo-brb"
+    description: "Sole developer and maintainer of the desdeo-brb open-source software framework for building and training belier rule-based (BRB) systems."
+    url: "https://github.com/gialmisi/desdeo-brb"
+    include: [cv]
