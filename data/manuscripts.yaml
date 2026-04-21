@@ -7,5 +7,30 @@ manuscripts:
   - title: "Multi-Objective Optimization: A Thematic Analysis of Analysts' Perspectives on Decision-Support"
     authors: "Z. Osika, G. Misitano, J. Zatarain-Salazar, P. K. Murukannaiah"
     journal: "Journal of Multi-Criteria Decision Analysis"
-    status: "manuscript submitted"
+    status: "manuscript under review"
+    include: [cv]
+  - title: "MAS-XIMO: Multi-Agent System for Explainable Interactive Multiobjective Optimization"
+    authors: "M. Nieminen, G. Misitano, M. Emmerich, K. Miettinen, B. Afsar"
+    journal: "Autonomous Agents and Multi-Agent Systems"
+    status: "manuscript under preparation"
+    include: [cv]
+  - title: "Generating Zero-cost Shadow Price Equivalent Information for Opaque-box Optimization Problems"
+    authors: "G. Misitano, J. Branke"
+    journal: "Journal TBD"
+    status: "manuscript under preparation"
+    include: [cv]
+  - title: "Interactive Multiobjective Optimization in Mobile Health Clinic Plannin"
+    authors: "G. Misitano, I. Kropp, M. Rush"
+    journal: "Journal TBD"
+    status: "manuscript under preparation"
+    include: [cv]
+  - title: "DESDEO 2: Core-Logic for Interactive Multiobjective Optimization"
+    authors: "G. Misitano, B. Saini, G. Lárraga, J. Roponen, J. Pajasmaa, M. Nieminen, B. Shavazipour, K. Miettinen"
+    journal: "Journal of Open Source Software"
+    status: "manuscript under preparation"
+    include: [cv]
+  - title: "desdeo-brb: A trainable Belief Rule-Based inference system with a scikit-learn-compatible API"
+    authors: "G. Misitano"
+    journal: "Journal of Open Source Software"
+    status: "manuscript under preparation"
     include: [cv]

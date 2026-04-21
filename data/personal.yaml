@@ -7,3 +7,5 @@ languages:
     level: "native"
   - language: "English"
     level: "full professional proficiency"
+  - language: "Japanese"
+    level: "beginner"

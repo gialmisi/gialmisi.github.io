@@ -146,7 +146,7 @@ Date of CV: \today
 
 \begin{itemize}
 ((*- for output in outputs *))
-\item ((( output.description | replace("DESDEO", "\\href{" ~ output.url ~ "}{DESDEO}") )))
+\item ((( output.description | replace(output.name, "\\href{" ~ output.url ~ "}{" ~ output.name ~ "}") )))
 ((*- endfor *))
 \end{itemize}
 
@@ -225,7 +225,7 @@ Date of CV: \today
 \end{enumerate}
 ((*- if manuscripts *))
 
-\textbf{Manuscripts under review:}
+\textbf{Manuscripts under review or preparation:}
 \begin{enumerate}
 ((*- for ms in manuscripts *))
 \item ((( ms.authors ))), ``((( ms.title )))'', \textit{((( ms.journal )))}, ((( ms.status ))).

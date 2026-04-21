@@ -1,5 +1,11 @@
 supervisions:
   - type: "Doctoral thesis (co-supervisor)"
+    student: "Palomäki S."
+    title: "From individual preferences to landscape sustainability: decision support in Finnish private forest management"
+    institution: "University of Helsinki, Finland"
+    period: "2026, ongoing"
+    include: [cv]
+  - type: "Doctoral thesis (co-supervisor)"
     student: "Nieminen M."
     title: "Agents in Interactive Multiobjective Optimization"
     institution: "University of Jyväskylä, Finland"

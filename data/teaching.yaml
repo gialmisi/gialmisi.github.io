@@ -1,7 +1,27 @@
 teachings:
-  - course: "TIES5830: Course on Data-driven Optimization and Decision Making"
+  - course: "TIES5830: Data-driven Optimization and Decision Making"
     institution: "University of Jyväskylä"
-    position: "Lecturer"
+    position: "Lecturer and organizer"
+    period: "2026"
+    details: >-
+      I prepared and gave all the lectures during the course related to data-driven interactive
+      multiobjective optimization focusing on practical aspects and how to best support
+      decision makers in tackling multiobjective optimization problems.
+    include: [website, cv]
+  - course: "COM3 Interactive Multiobjective Optimization: Applications and Tools to Support Decision Making"
+    institution: "The 34th Jyväskylä Summer School, University of Jyväskylä"
+    position: "Lecturer and organizer"
+    period: "2025"
+    details: >-
+      During the two-week summer school course, I prepared and delivered two
+      whole-day lectures on interactive multiobjective optimization. I was also
+      a teacher in the practical sessions during the whole duration of the
+      course, where we focused on utilzing the DESDEO framework to model and
+      and solve multiobjective optimization problems.
+    include: [website, cv]
+  - course: "TIES5830: Data-driven Optimization and Decision Making"
+    institution: "University of Jyväskylä"
+    position: "Co-Lecturer"
     period: "2024"
     details: >-
       I have prepared and gave lectures during the course related to data-driven interactive
@@ -10,7 +30,7 @@ teachings:
     include: [website, cv]
   - course: "TIES598: Nonlinear Multiobjective Optimization Course"
     institution: "University of Jyväskylä"
-    position: "Lecturer"
+    position: "Co-Lecturer"
     period: "2023"
     details: >-
       During the course, I prepared and delivered lectures on data-driven
@@ -20,7 +40,7 @@ teachings:
     include: [website, cv]
   - course: "COM1: Interactive Multiobjective Optimization: Applications and Tools to Support Decision Making"
     institution: "The 31st Jyväskylä Summer School, University of Jyväskylä"
-    position: "Lecturer"
+    position: "Lecturer and organizer"
     period: "2022"
     details: >-
       During the two-week summer school course, I prepared and delivered two
