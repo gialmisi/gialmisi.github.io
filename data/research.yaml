@@ -116,10 +116,29 @@ positions:
 
 outputs:
   - name: "DESDEO"
-    description: "Lead developer and maintainer of the DESDEO open-source software framework for interactive multiobjective optimization."
+    description: "Developer and maintainer of the DESDEO open-source software framework for interactive multiobjective optimization."
     url: "https://github.com/industrial-optimization-group/DESDEO"
     include: [cv]
+    authors: "G. Misitano, B. S. Saini, B. Afsar, B. Shavazipour, K. Miettinen"
+    title: "DESDEO: The modular and open source framework for interactive multiobjective optimization"
+    journal: "Open-source software, https://github.com/industrial-optimization-group/DESDEO"
+    year: "2021"
+    rcf_category: "I2"
   - name: "desdeo-brb"
-    description: "Sole developer and maintainer of the desdeo-brb open-source software framework for building and training belier rule-based (BRB) systems."
+    description: "Developer and maintainer of the desdeo-brb open-source software framework for building and training belief rule-based (BRB) systems."
     url: "https://github.com/gialmisi/desdeo-brb"
     include: [cv]
+    authors: "G. Misitano"
+    title: "desdeo-brb: An open-source software framework for building and training belief rule-based systems"
+    journal: "Open-source software, https://github.com/gialmisi/desdeo-brb"
+    year: "2020"
+    rcf_category: "I2"
+  - name: "XLEMOO"
+    description: "Developer and maintainer of XLEMOO, an open-source software framework for explainable learnable evolutionary multiobjective optimization."
+    url: "https://github.com/gialmisi/XLEMOO"
+    include: [cv]
+    authors: "G. Misitano"
+    title: "XLEMOO: An open-source software framework for explainable learnable evolutionary multiobjective optimization"
+    journal: "Open-source software, https://github.com/gialmisi/XLEMOO"
+    year: "2023"
+    rcf_category: "I2"

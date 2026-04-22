@@ -104,6 +104,10 @@ tutorials:
     link: "https://robocoast.eu/kurssi/tehokkaampaa-paatoksentekoa-monitavoiteoptimoinnin-avulla-jyu/"
     link_note: "in Finnish"
     include: [website, cv]
+    authors: "G. Misitano"
+    journal: "ROBOCOAST EDIH Lyhytkoulutukset, https://robocoast.eu/kurssi/tehokkaampaa-paatoksentekoa-monitavoiteoptimoinnin-avulla-jyu/"
+    year: "2024"
+    rcf_category: "I1"
   - title: "DESDEO: The Modular and Open Source Framework for Interactive Multiobjective Optimization"
     event: "DEMO seminar, University of Jyväskylä"
     date: "2021"
