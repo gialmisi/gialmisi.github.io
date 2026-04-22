@@ -11,10 +11,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import jinja2
 
-from lib.build_utils import latex_escape, load_yaml
+from lib.build_utils import DATA_DIR, latex_escape, load_yaml
 
 TEMPLATE_PATH = Path(__file__).resolve().parent / "publications_template.tex"
 OUTPUT_DIR = Path(__file__).resolve().parent / "output"
+
+REQUIRED_FIELDS = ("authors", "title", "journal", "year")
 
 # Source: Finnish national publication type classification (Julkaisutyyppiluokitus)
 # maintained by CSC. Codes and English labels taken from:
@@ -65,12 +67,52 @@ RCF_SUBCATEGORIES = OrderedDict([
 ])
 
 
-def filter_for_publications_list(items):
-    """Filter items, keeping only those with 'publications_list' in their include field."""
-    return [
-        item for item in items
-        if "publications_list" in item.get("include", [])
-    ]
+def collect_rcf_entries(obj):
+    """Recursively walk a loaded YAML structure and collect dicts with 'rcf_category'.
+
+    A dict carrying 'rcf_category' is treated as a leaf — we do not recurse into
+    it. This lets any entry in any data file opt into the publication list.
+    """
+    entries = []
+    if isinstance(obj, dict):
+        if "rcf_category" in obj:
+            entries.append(obj)
+        else:
+            for v in obj.values():
+                entries.extend(collect_rcf_entries(v))
+    elif isinstance(obj, list):
+        for item in obj:
+            entries.extend(collect_rcf_entries(item))
+    return entries
+
+
+def load_rcf_entries():
+    """Load all YAML files in the data directory and collect RCF-tagged entries."""
+    entries = []
+    for yaml_file in sorted(DATA_DIR.glob("*.yaml")):
+        data = load_yaml(yaml_file.name)
+        entries.extend(collect_rcf_entries(data))
+    return entries
+
+
+def validate_entries(entries):
+    """Ensure every RCF-tagged entry has the fields required for rendering."""
+    errors = []
+    for entry in entries:
+        missing = [f for f in REQUIRED_FIELDS if not entry.get(f)]
+        if missing:
+            errors.append(
+                f"Entry tagged rcf_category={entry['rcf_category']!r} "
+                f"is missing required field(s) {missing}: {entry}"
+            )
+        sub = entry["rcf_category"]
+        if sub not in RCF_SUBCATEGORIES:
+            errors.append(
+                f"Entry has unknown rcf_category={sub!r} (expected one of "
+                f"{sorted(RCF_SUBCATEGORIES)}): {entry}"
+            )
+    if errors:
+        raise ValueError("Invalid RCF entries:\n  - " + "\n  - ".join(errors))
 
 
 def group_publications(publications):
@@ -118,9 +160,9 @@ def group_publications(publications):
 def build_publications(rcf_year=None):
     """Build the publication list by rendering the Jinja2 LaTeX template with YAML data."""
     personal = load_yaml("personal.yaml")
-    pubs_data = load_yaml("publications.yaml")
 
-    publications = filter_for_publications_list(pubs_data.get("publications", []))
+    publications = load_rcf_entries()
+    validate_entries(publications)
     grouped = group_publications(publications)
 
     if rcf_year is None:

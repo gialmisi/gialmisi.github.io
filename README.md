@@ -111,10 +111,14 @@ Each entry in a YAML data file has an `include` list that controls where it appe
 - `include: [website]` — website only
 - `include: [cv]` — CV only
 - `include: [website, cv]` — both
-- `include: [website, cv, publications_list]` — all three outputs
-- `include: [website, publications_list]` — website and publication list (e.g., theses)
 
 If `include` is omitted, the entry appears in both website and CV by default.
+
+### The `rcf_category` field
+
+Any entry (in *any* YAML file under `data/`) that carries an `rcf_category` field is picked up by the publication list build, regardless of where it lives. This lets non-publication items (open-source software under `research.yaml` `outputs`, audiovisual tutorials under `disseminations.yaml`, etc.) also appear in the RCF list.
+
+An entry with `rcf_category` must also provide `authors`, `title`, `journal`, and `year` — the build fails loudly if any are missing.
 
 ### Data files
 
@@ -143,10 +147,10 @@ Edit the relevant YAML file and add an entry following the existing format. For 
   journal: "Journal Name"
   year: "2026"
   rcf_category: "A1"
-  include: [website, cv, publications_list]
+  include: [website, cv]
 ```
 
-The `rcf_category` field classifies the publication for the RCF publication list (A1 = journal article, A3 = book chapter, A4 = conference proceedings, G3-G5 = theses, etc.).
+The `rcf_category` field classifies the entry for the RCF publication list (A1 = journal article, A3 = book chapter, A4 = conference proceedings, G1/G2/G5 = theses, I1 = audiovisual, I2 = ICT application, etc.). See `publications/build_publications.py` for the full list of subcategory codes.
 
 ### Optional CV sections
 
