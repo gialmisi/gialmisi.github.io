@@ -6,8 +6,13 @@ authors = [{name = "Giovanni Misitano", email = "giovanni.a.misitano@jyu.fi"}]
 license = {text = "MIT"}
 requires-python = ">=3.12"
 dependencies = [
-    "mkdocs>=1.6.0,<2",
-    "mkdocs-material>=9.5.28",
+    "properdocs>=1.6.5",
+    "mkdocs-materialx>=10.1",
     "mkdocs-include-markdown-plugin>=6.2.1",
     "mkdocs-macros-plugin>=1.0.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
 ]

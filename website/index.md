@@ -102,7 +102,7 @@ check the primer [here](https://desdeo.readthedocs.io/en/latest/tutorials/moo_pr
 
     ---
 
-    This page has been built using the materials theme for mkdocs.
+    This page has been built using ProperDocs with the MaterialX theme.
     The source code of this page is completely open and very easy to
     modify and update. 
 

@@ -1,14 +1,14 @@
 # gialmisi.github.io
 
-Personal academic homepage and CV for Giovanni Misitano, built with MkDocs Material and a Jinja2-templated LaTeX CV.
+Personal academic homepage and CV for Giovanni Misitano, built with ProperDocs and the MaterialX theme, plus a Jinja2-templated LaTeX CV.
 
 ## Project structure
 
 ```
 ├── data/                  # YAML data files (shared by website, CV, and publication list)
-├── website/               # MkDocs page sources (Markdown + Jinja2 macros)
-├── macros/main.py         # MkDocs macros plugin: load_data / load_data_for
-├── mkdocs.yml             # MkDocs configuration
+├── website/               # ProperDocs page sources (Markdown + Jinja2 macros)
+├── macros/main.py         # ProperDocs macros plugin: load_data / load_data_for
+├── mkdocs.yml             # ProperDocs configuration
 ├── lib/build_utils.py     # Shared LaTeX/YAML utilities for build scripts
 ├── cv/
 │   ├── build_cv.py        # Builds cv/output/cv.tex from data/ and the template
@@ -43,7 +43,7 @@ just sync
 ```bash
 just serve
 # or
-uv run mkdocs serve
+uv run properdocs serve
 ```
 
 This starts a local server at `http://127.0.0.1:8000` with live reload.
@@ -53,7 +53,7 @@ This starts a local server at `http://127.0.0.1:8000` with live reload.
 ```bash
 just deploy
 # or
-uv run mkdocs gh-deploy --remote-branch main
+uv run properdocs gh-deploy --remote-branch main
 ```
 
 This builds the site and pushes the static output to the `main` branch, which GitHub Pages serves. The `work` branch is the source branch.

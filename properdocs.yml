@@ -14,7 +14,7 @@ watch:
   - website
 
 theme:
-  name: material
+  name: materialx
   features:
     - navigation.instant
     - navigation.tabs

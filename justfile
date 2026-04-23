@@ -6,11 +6,11 @@ sync:
 
 # Start local website preview with live reload
 serve:
-    uv run mkdocs serve
+    uv run properdocs serve
 
 # Deploy website to GitHub Pages (main branch)
 deploy:
-    uv run mkdocs gh-deploy --remote-branch main
+    uv run properdocs gh-deploy --remote-branch main
 
 # Build the CV PDF
 cv:
