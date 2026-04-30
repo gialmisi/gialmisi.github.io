@@ -79,10 +79,53 @@ rewards:
       [YouTube](https://www.youtube.com/watch?v=Rt1YKWaNG94).
     include: [website, cv]
 
+editorial_roles:
+  - role: "Reproducibility Board Member"
+    organization: "ACM Transactions on Evolutionary Learning and Optimization (TELO)"
+    period: "2026, ongoing"
+    include: [website, cv]
+
+peer_reviews:
+  - journal: "European Journal of Operational Research"
+    summary: "1 review (2023)"
+    include: [website, cv]
+  - journal: "IEEE Transactions on Evolutionary Computation"
+    summary: "1 review (2023)"
+    include: [website, cv]
+  - journal: "Omega"
+    summary: "3 reviews (2023, 2025)"
+    include: [website, cv]
+  - journal: "Transportation Research Part B: Methodological"
+    summary: "2 reviews (2024)"
+    include: [website, cv]
+  - journal: "Journal of Multi-Criteria Decision Analysis"
+    summary: "2 reviews (2024, 2025)"
+    include: [website, cv]
+  - journal: "ACM Transactions on Evolutionary Learning and Optimization"
+    summary: "1 review (2025)"
+    include: [website, cv]
+  - journal: "Swarm and Evolutionary Computation"
+    summary: "1 review (2025)"
+    include: [website, cv]
+
+conferences_organized:
+  - name: "FORS50"
+    role: "Main coordinator"
+    organization: "The Finnish Operations Research Society, University of Jyväskylä"
+    date: 2024
+    details: >
+      Main coordinator of FORS50, the 50-year-anniversary conference of
+      The Finnish Operations Research Society, held at the University of
+      Jyväskylä.
+    include: [website, cv]
+
 fundings:
   - name: "Full scholarship from the Vilho, Yrjö and Kalle Väisälä Fund"
     date: 2020
     organization: "Finnish Academy of Science and Letters"
+    type: "Personal scholarship"
+    amount: "EUR 28,600"
+    role: "Recipient"
     details: >
       The scholarship consisted of 28,600 euros to work full time on my PhD.
       The grant covered a year's worth of full-time work.

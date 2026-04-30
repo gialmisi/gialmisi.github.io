@@ -8,6 +8,8 @@ educations:
       explainable artificial intelligence, when applied to interactive
       multiobjective optimization methods to better support decision makers.
     institution: "University of Jyväskylä"
+    location: "Jyväskylä, Finland"
+    contact: "University of Jyväskylä, Faculty of Information Technology, P.O. Box 35, FI-40014 University of Jyväskylä, Finland"
     year: "2024"
     url: "http://urn.fi/URN:ISBN:978-952-86-0183-8"
     include: [website, cv]
@@ -21,6 +23,7 @@ educations:
       systems as a machine learning model to learn the preference model of a
       decision maker.
     institution: "University of Jyväskylä"
+    location: "Jyväskylä, Finland"
     year: "2020"
     url: "http://urn.fi/URN:NBN:fi:jyu-202007065235"
     include: [website, cv]
@@ -33,6 +36,7 @@ educations:
       beta-decay of various nuclei. I also compted the experimental upper limit
       of the neutrino based on the experiments' results.
     institution: "University of Jyväskylä"
+    location: "Jyväskylä, Finland"
     year: "2016"
     url: "http://urn.fi/URN:NBN:fi:jyu-202005043017"
     include: [website, cv]

@@ -1,8 +1,12 @@
 projects:
   - name: "DESIDES"
+    full_title: "Decision Support with Interactive Advanced Data-Enabled Multiobjective Optimization Systems"
     organization: Research Council of Finland
     id: 355346
-    period: "2023 - ongoing"
+    period: "2023 - 2027"
+    type: "Academy Project (Academy Project Funding 2022)"
+    amount: "EUR 599,876"
+    principal_investigator: "Prof. Kaisa Miettinen, University of Jyväskylä"
     details: >
       I am in charge of one of the three work packages of the project. In the
       work package, I continue to research the concept and application of
@@ -18,9 +22,13 @@ projects:
       given at this time.
     include: [website]
   - name: "DAEMON"
+    full_title: "Data-Driven Decision Support with Multiobjective Optimization"
     organization: Research Council of Finland
     id: 322221
     period: "2019 - 2023"
+    type: "Academy Project"
+    amount: "EUR 592,530"
+    principal_investigator: "Prof. Kaisa Miettinen, University of Jyväskylä"
     details: >
       I kept contributing to the DESDEO framework, focusing on the development
       of web-based user interfaces for interactive multiobjective optimization.
@@ -32,14 +40,17 @@ projects:
       optimization methods.
     include: [website, cv]
   - name: "DESDEO"
+    full_title: "Decision Support for Computationally Demanding Optimization Problems"
     organization: Research Council of Finland
     id: 287496
     period: "2015 - 2019"
+    type: "Academy Project"
+    principal_investigator: "Prof. Kaisa Miettinen, University of Jyväskylä"
     details: >
       I contributed to the DESDEO framework, spearheading its re-implementation.
       I focused on the tools to model multiobjective optimization problems, and
       on implementing scalarization-based interactive multiobjective optimization methods.
-    include: [website, cv]
+    include: [website]
 
 visits:
   - institution: "Delft University of Technology"
@@ -142,3 +153,21 @@ outputs:
     journal: "Open-source software, https://github.com/gialmisi/XLEMOO"
     year: "2023"
     rcf_category: "I2"
+
+leadership:
+  - role: "Lead developer and maintainer"
+    context: "DESDEO open-source framework for interactive multiobjective optimization (Multiobjective Optimization Group, University of Jyväskylä)"
+    period: "ongoing"
+    include: [website, cv]
+  - role: "Work-package lead"
+    context: "DESIDES, Research Council of Finland (project no. 355346); leads one of the project's three work packages on explainable interactive multiobjective optimization"
+    period: "2023, ongoing"
+    include: [website, cv]
+
+open_science:
+  - statement: "Maintainer of DESDEO, an open-source Python and TypeScript framework for interactive multiobjective optimization, released under a permissive licence."
+    include: [website, cv]
+  - statement: "All peer-reviewed publications are made openly accessible, either via the publisher's open-access option or through the institutional repository JYX (https://jyx.jyu.fi)."
+    include: [website, cv]
+  - statement: "Research code released openly on GitHub: DESDEO, desdeo-brb, XLEMOO."
+    include: [website, cv]

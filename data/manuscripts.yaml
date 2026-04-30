@@ -37,6 +37,6 @@ manuscripts:
   - title: "desdeo-brb: A trainable Belief Rule-Based inference system with a scikit-learn-compatible API"
     authors: "G. Misitano"
     journal: "Journal of Open Source Software"
-    status: "manuscript under preparation"
+    status: "manuscript submitted"
     include: [cv]
 
