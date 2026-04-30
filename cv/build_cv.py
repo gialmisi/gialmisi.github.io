@@ -32,6 +32,8 @@ def load_all_data() -> dict:
     data["educations"] = filter_for_cv(education.get("educations", []))
 
     research = load_yaml("research.yaml")
+    data["leadership"] = filter_for_cv(research.get("leadership", []))
+    data["open_science"] = filter_for_cv(research.get("open_science", []))
     positions = filter_for_cv(research.get("positions", []))
     visits = filter_for_cv(research.get("visits", []))
     # Normalize visits to look like positions so they can be merged
@@ -53,20 +55,37 @@ def load_all_data() -> dict:
     data["activity_positions"] = filter_for_cv(activities.get("positions", []))
     data["rewards"] = filter_for_cv(activities.get("rewards", []))
     data["fundings"] = filter_for_cv(activities.get("fundings", []))
+    data["conferences_organized"] = filter_for_cv(activities.get("conferences_organized", []))
+    data["editorial_roles"] = filter_for_cv(activities.get("editorial_roles", []))
+    data["peer_reviews"] = filter_for_cv(activities.get("peer_reviews", []))
 
     teaching = load_yaml("teaching.yaml")
     data["teachings"] = filter_for_cv(teaching.get("teachings", []))
 
     publications = load_yaml("publications.yaml")
     data["publications"] = filter_for_cv(publications.get("publications", []))
+    data["publications_total"] = len(data["publications"])
+    data["publications_oa_total"] = sum(
+        1 for p in data["publications"] if p.get("open_access")
+    )
 
     disseminations = load_yaml("disseminations.yaml")
     data["invitations"] = filter_for_cv(disseminations.get("invitations", []))
     data["conferences"] = filter_for_cv(disseminations.get("conferences", []))
     data["tutorials"] = filter_for_cv(disseminations.get("tutorials", []))
+    data["media"] = filter_for_cv(disseminations.get("media", []))
 
     supervision = load_yaml("supervision.yaml")
     data["supervisions"] = filter_for_cv(supervision.get("supervisions", []))
+    doctoral = [s for s in data["supervisions"] if "doctoral" in s.get("type", "").lower()]
+    masters = [s for s in data["supervisions"] if "master" in s.get("type", "").lower()]
+    data["doctoral_ongoing_count"] = sum(
+        1 for s in doctoral if "ongoing" in str(s.get("period", "")).lower()
+    )
+    data["doctoral_completed_count"] = len(doctoral) - data["doctoral_ongoing_count"]
+    data["masters_completed_count"] = sum(
+        1 for s in masters if "ongoing" not in str(s.get("period", "")).lower()
+    )
 
     manuscripts = load_yaml("manuscripts.yaml")
     data["manuscripts"] = filter_for_cv(manuscripts.get("manuscripts", []))
@@ -104,14 +123,23 @@ def build_cv():
 
     template = env.get_template("cv_template.tex")
 
+    # Keys whose values are URLs and must remain valid inside \href{}.
+    # Inside \href{URL}{...}, only %, #, and \ need escaping; underscores etc. must stay raw.
+    URL_KEYS = {"doi", "open_access", "uri", "url", "slides", "poster", "recording", "link"}
+
+    def escape_url(url: str) -> str:
+        return url.replace("\\", r"\\").replace("%", r"\%").replace("#", r"\#")
+
     # Escape all string values in the data
-    def escape_data(obj):
+    def escape_data(obj, key=None):
         if isinstance(obj, str):
+            if key in URL_KEYS:
+                return escape_url(obj)
             return latex_escape(obj)
         elif isinstance(obj, list):
-            return [escape_data(item) for item in obj]
+            return [escape_data(item, key=key) for item in obj]
         elif isinstance(obj, dict):
-            return {k: escape_data(v) for k, v in obj.items()}
+            return {k: escape_data(v, key=k) for k, v in obj.items()}
         return obj
 
     escaped_data = escape_data(data)

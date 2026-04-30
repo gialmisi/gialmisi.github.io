@@ -79,9 +79,13 @@ Date of CV: \today
 
 \begin{itemize}
 ((*- for edu in educations *))
-\item ((( edu.year ))), ((( edu.degree ))), ((( edu.institution ))), Finland
+\item ((( edu.year ))), ((( edu.degree ))), ((( edu.institution )))((*- if edu.location *)), ((( edu.location )))((*- endif *)).
 ((*- endfor *))
 \end{itemize}
+((*- if educations and educations[0].contact *))
+
+Contact details of the organisation that granted the highest degree: ((( educations[0].contact ))).
+((*- endif *))
 
 ((*- if other_education *))
 %% Other education and expertise
@@ -108,6 +112,10 @@ Date of CV: \today
 
 ((*- set current = positions[0] *))
 ((( current.period ))), ((( current.position ))), ((( current.organization )))
+((*- if personal.career_stage *))
+
+Career stage: ((( personal.career_stage )))
+((*- endif *))
 
 %% Previous work experience
 \section*{Previous work experience}
@@ -134,10 +142,10 @@ Date of CV: \today
 
 \begin{itemize}
 ((*- for fund in fundings *))
-\item ((( fund.date ))), ((( fund.name ))), ((( fund.organization ))).
+\item ((( fund.date ))), ((( fund.name ))), ((( fund.organization )))((*- if fund.type *)). Type: ((( fund.type )))((*- endif *))((*- if fund.amount *)). Amount: ((( fund.amount )))((*- endif *))((*- if fund.role *)). Role: ((( fund.role )))((*- endif *)).
 ((*- endfor *))
 ((*- for proj in projects *))
-\item ((( proj.period ))), ((( proj.name ))) (project no. ((( proj.id )))), ((( proj.organization ))). Role: researcher.
+\item ((( proj.period ))), ((( proj.name )))((*- if proj.full_title *)) -- ((( proj.full_title )))((*- endif *)) (project no. ((( proj.id )))), ((( proj.organization )))((*- if proj.type *)). Type: ((( proj.type )))((*- endif *))((*- if proj.amount *)). Amount: ((( proj.amount )))((*- endif *))((*- if proj.principal_investigator *)). Principal investigator: ((( proj.principal_investigator )))((*- endif *)). Role: researcher.
 ((*- endfor *))
 \end{itemize}
 
@@ -153,11 +161,33 @@ Date of CV: \today
 %% Research supervision and leadership experience
 \section*{Research supervision and leadership experience}
 
+\textbf{Supervision summary:}
+\begin{itemize}
+((*- if doctoral_ongoing_count *))
+\item Doctoral theses (co-supervisor): ((( doctoral_ongoing_count ))) ongoing((*- if doctoral_completed_count *)), ((( doctoral_completed_count ))) completed((*- endif *)).
+((*- elif doctoral_completed_count *))
+\item Doctoral theses (co-supervisor): ((( doctoral_completed_count ))) completed.
+((*- endif *))
+((*- if masters_completed_count *))
+\item Master's theses (supervisor): ((( masters_completed_count ))) completed.
+((*- endif *))
+\end{itemize}
+
+\textbf{Supervised theses:}
 \begin{itemize}
 ((*- for sup in supervisions *))
-\item ((( sup.type ))), ((( sup.student ))), ``((( sup.title )))'', ((( sup.institution ))), ((( sup.period ))).
+\item ((( sup.type ))), ``((( sup.title )))'', ((( sup.institution ))), ((( sup.period ))).
 ((*- endfor *))
 \end{itemize}
+
+((*- if leadership *))
+\textbf{Leadership experience:}
+\begin{itemize}
+((*- for lead in leadership *))
+\item ((( lead.period ))), ((( lead.role ))), ((( lead.context ))).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
 
 %% Teaching merits
 \section*{Teaching merits}
@@ -187,6 +217,7 @@ Date of CV: \today
 ((*- endfor *))
 \end{itemize}
 
+\medskip
 \textbf{Invited talks:}
 \begin{itemize}
 ((*- for inv in invitations *))
@@ -194,14 +225,68 @@ Date of CV: \today
 ((*- endfor *))
 \end{itemize}
 
+((*- if conferences_organized *))
+\medskip
+\textbf{Organising scientific conferences:}
+\begin{itemize}
+((*- for conf in conferences_organized *))
+\item ((( conf.date ))), ((( conf.role ))), ((( conf.name ))), ((( conf.organization ))).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+((*- if editorial_roles *))
+\medskip
+\textbf{Editorial and review committee positions:}
+\begin{itemize}
+((*- for er in editorial_roles *))
+\item ((( er.period ))), ((( er.role ))), ((( er.organization ))).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+((*- if peer_reviews *))
+\medskip
+\textbf{Referee for scientific publications:}
+\begin{itemize}
+((*- for pr in peer_reviews *))
+\item \textit{((( pr.journal )))}: ((( pr.summary ))).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
 %% Scientific and societal impact
 \section*{Scientific and societal impact}
 
+((*- if open_science *))
+\medskip
+\textbf{Open science:}
+\begin{itemize}
+((*- for os in open_science *))
+\item ((( os.statement )))
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+((*- if media *))
+\medskip
+\textbf{Research communication and media:}
+\begin{itemize}
+((*- for m in media *))
+\item ((( m.date ))), ((( m.type ))), ``((( m.title )))'', ((( m.venue )))((*- if m.link *))~(\href{((( m.link )))}{recording})((*- endif *)).
+((*- endfor *))
+\end{itemize}
+((*- endif *))
+
+((*- if tutorials *))
+\medskip
+\textbf{Tutorials and continuing education:}
 \begin{itemize}
 ((*- for tut in tutorials *))
 \item ((( tut.date ))), ``((( tut.title )))'', ((( tut.event ))).
 ((*- endfor *))
 \end{itemize}
+((*- endif *))
 
 ((*- if other_merits *))
 %% Other merits
@@ -217,10 +302,12 @@ Date of CV: \today
 %% Publications
 \section*{Publications}
 
+Total: ((( publications_total ))) peer-reviewed publications, of which ((( publications_oa_total ))) are available in open access. The list below contains the most significant publications; citation data is available via the author's \href{https://scholar.google.com/citations?user=FH4YQc8AAAAJ}{Google Scholar profile}. A full publication list classified per the Ministry of Education and Culture (RCF) categories is provided as a separate appendix.
+
 \textbf{Peer-reviewed publications:}
 \begin{enumerate}
 ((*- for pub in publications *))
-\item ((( pub.authors ))), ``((( pub.title )))'', \textit{((( pub.journal )))}, ((( pub.year ))).
+\item ((( pub.authors ))), ``((( pub.title )))'', \textit{((( pub.journal )))}, ((( pub.year ))).((*- if pub.doi *)) \href{((( pub.doi )))}{DOI}.((*- endif *))((*- if pub.open_access *)) \href{((( pub.open_access )))}{Open access}((*- if pub.open_access_note *)), ((( pub.open_access_note )))((*- endif *)).((*- endif *))
 ((*- endfor *))
 \end{enumerate}
 ((*- if manuscripts *))

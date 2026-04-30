@@ -96,6 +96,25 @@ posters:
     poster: "data/slides/poster2021.pdf"
     include: [website]
 
+media:
+  - title: "Mitä tutkIT, Giovanni Misitano? Monitavoiteoptimoinnin tutkimus ja väitöskirjatutkijan arki"
+    type: "Podcast guest"
+    venue: "AamukahvIT-podcast, University of Jyväskylä"
+    date: "2022"
+    link: "https://www.jyu.fi/it/fi/hae-opiskelemaan/opiskelijalahettilaat/aamukahvit-podcast/2020/mita-tutkit-giovanni-misitano-monitavoiteoptimoinnin-tutkimus-ja-vaitoskirjatutkijan-arki"
+    include: [website, cv]
+  - title: "Enhancing the decision-support capabilities of interactive multiobjective optimization with explainability"
+    type: "Lectio praecursoria (public defence opening lecture)"
+    venue: "University of Jyväskylä"
+    date: "2024"
+    include: [website, cv]
+  - title: "Best pitch on information and communication technology / telecommunications"
+    type: "Live pitch"
+    venue: "Millennium Innovation Forum 2022, Nokia Foundation"
+    date: "2022"
+    link: "https://www.youtube.com/watch?v=Rt1YKWaNG94"
+    include: [website, cv]
+
 tutorials:
   - title: "Parempia kompromissiratkaisuja ja päätöksiä monitavoiteoptimoinnin avulla"
     event: "ROBOCOAST EDIH Lyhytkoulutukset"
