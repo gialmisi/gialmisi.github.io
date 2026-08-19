@@ -1,4 +1,14 @@
 positions:
+  - position: Member
+    organization: Young Academy Finland (Nuorten Tiedeakatemia)
+    period: "2026–2030"
+    details: >
+      Young Academy Finland gathers early-career researchers from all fields of
+      science to promote the role of science in society and to advance the
+      position of young researchers. I was elected as one of the 20 new members
+      for the four-year term starting at the autumn general meeting in September
+      2026.
+    include: [website, cv]
   - position: Member of the Faculty Council
     organization: Faculty of Information Technology, University of Jyväskylä
     period: "2026, ongoing"
@@ -42,6 +52,17 @@ positions:
     include: [website, cv]
 
 rewards:
+  - name: "Finalist, MCDM Doctoral Dissertation Award"
+    date: 2026
+    organization: "28th International Conference on Multiple Criteria Decision Making, Wuppertal, Germany"
+    details: >
+      Selected as one of four finalists for the MCDM Doctoral Dissertation
+      Award of the International Society on Multiple Criteria Decision Making.
+      The award recognizes outstanding doctoral dissertation research in the
+      development of theory, methodology, and/or the application of theory or
+      methodology to MCDM. The finalists presented their work in the Doctoral
+      Dissertation Award Session of the conference.
+    include: [website, cv]
   - name: "Good Dissertation Award (Hyvä väitöskirja -palkinto)"
     date: 2025
     organization: "University of Jyväskylä Foundation"
