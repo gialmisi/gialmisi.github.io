@@ -1,4 +1,14 @@
 conferences:
+  - title: "Enhancing the Decision-Support Capabilities of Interactive Multiobjective Optimization with Explainability"
+    event: "28th International Conference on Multiple Criteria Decision Making, Wuppertal, Germany (Doctoral Dissertation Award finalist talk)"
+    date: "2026"
+    slides: "data/slides/MCDM2026_dissertation_award.pdf"
+    include: [website]
+  - title: "Multiobjective Optimization: A Thematic Analysis of Analysts' Perspectives on Decision-Support"
+    event: "28th International Conference on Multiple Criteria Decision Making, Wuppertal, Germany"
+    date: "2026"
+    slides: "data/slides/MCDM2026_thematic.pdf"
+    include: [website]
   - title: "Towards Explainable Interactive Multiobjective Optimization: R-XIMO"
     event: "2025 INFORMS Annual Meeting, Atlanta, United States"
     date: "2025"
