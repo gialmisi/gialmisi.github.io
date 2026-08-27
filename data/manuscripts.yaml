@@ -32,7 +32,7 @@ manuscripts:
   - title: "DESDEO 2: Core-Logic for Interactive Multiobjective Optimization"
     authors: "G. Misitano, B. Saini, G. Lárraga, J. Roponen, J. Pajasmaa, M. Nieminen, B. Shavazipour, K. Miettinen"
     journal: "Journal of Open Source Software"
-    status: "manuscript under preparation"
+    status: "manuscript under review"
     include: [cv]
   - title: "desdeo-brb: A trainable Belief Rule-Based inference system with a scikit-learn-compatible API"
     authors: "G. Misitano"
