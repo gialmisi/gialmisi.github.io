@@ -1,5 +1,6 @@
 """Build CV from YAML data files using the RCF LaTeX template."""
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -58,6 +59,11 @@ def load_all_data() -> dict:
     data["conferences_organized"] = filter_for_cv(activities.get("conferences_organized", []))
     data["editorial_roles"] = filter_for_cv(activities.get("editorial_roles", []))
     data["peer_reviews"] = filter_for_cv(activities.get("peer_reviews", []))
+    # Summaries look like "4 reviews (2023, 2025)"; the leading number is the count.
+    data["peer_reviews_total"] = sum(
+        int(m.group(1)) if (m := re.match(r"\s*(\d+)", str(pr.get("summary", "")))) else 1
+        for pr in data["peer_reviews"]
+    )
 
     teaching = load_yaml("teaching.yaml")
     data["teachings"] = filter_for_cv(teaching.get("teachings", []))
@@ -102,9 +108,14 @@ def load_all_data() -> dict:
     return data
 
 
-def build_cv():
-    """Build the CV by rendering the Jinja2 LaTeX template with YAML data."""
+def build_cv(short: bool = False, output_name: str = "cv.tex"):
+    """Build the CV by rendering the Jinja2 LaTeX template with YAML data.
+
+    In short mode the publications and manuscripts sections are left out, and
+    the referee section is collapsed into a single sentence.
+    """
     data = load_all_data()
+    data["short"] = short
 
     # Set up Jinja2 with LaTeX-friendly delimiters
     env = jinja2.Environment(
@@ -147,10 +158,23 @@ def build_cv():
     output = template.render(**escaped_data)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    output_file = OUTPUT_DIR / "cv.tex"
+    output_file = OUTPUT_DIR / output_name
     output_file.write_text(output)
     print(f"CV generated: {output_file}")
 
 
 if __name__ == "__main__":
-    build_cv()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--short",
+        action="store_true",
+        help="omit publications and manuscripts, and condense the referee section",
+    )
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="output file name (default: cv.tex, or cv_short.tex with --short)",
+    )
+    args = parser.parse_args()
+    default_name = "cv_short.tex" if args.short else "cv.tex"
+    build_cv(short=args.short, output_name=args.output or default_name)

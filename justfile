@@ -17,6 +17,11 @@ cv:
     uv run python cv/build_cv.py
     cd cv/output && pdflatex -interaction=nonstopmode cv.tex && pdflatex -interaction=nonstopmode cv.tex
 
+# Build a short CV PDF without publications or manuscripts
+cv-short:
+    uv run python cv/build_cv.py --short
+    cd cv/output && pdflatex -interaction=nonstopmode cv_short.tex && pdflatex -interaction=nonstopmode cv_short.tex
+
 # Build the RCF publication list PDF (pass year as argument, defaults to current year)
 publications year="":
     #!/usr/bin/env bash

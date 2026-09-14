@@ -99,6 +99,10 @@ Contact details of the organisation that granted the highest degree: ((( educati
 ((*- endif *))
 
 %% Language skills
+((*- if short *))
+% Run-in label instead of a section heading, to keep the short CV compact.
+\textbf{Language skills:} ((* for lang in languages *))((* if loop.last and not loop.first *)) and ((* elif not loop.first *)), ((* endif *))((( lang.language ))) {(}((( lang.level ))))((* endfor *)).
+((*- else *))
 \section*{Language skills}
 
 \begin{itemize}
@@ -106,6 +110,7 @@ Contact details of the organisation that granted the highest degree: ((( educati
 \item ((( lang.language ))): ((( lang.level )))
 ((*- endfor *))
 \end{itemize}
+((*- endif *))
 
 %% Current employment
 \section*{Current employment}
@@ -161,6 +166,11 @@ Career stage: ((( personal.career_stage )))
 %% Research supervision and leadership experience
 \section*{Research supervision and leadership experience}
 
+((*- if short *))
+% Counts run in after the label, to keep the short CV compact.
+\textbf{Supervision summary:} ((* if doctoral_ongoing_count *))Doctoral theses (co-supervisor): ((( doctoral_ongoing_count ))) ongoing((* if doctoral_completed_count *)), ((( doctoral_completed_count ))) completed((* endif *))((* elif doctoral_completed_count *))Doctoral theses (co-supervisor): ((( doctoral_completed_count ))) completed((* endif *))((* if masters_completed_count *))((* if doctoral_ongoing_count or doctoral_completed_count *)); ((* endif *))Master's theses (supervisor): ((( masters_completed_count ))) completed((* endif *)).
+
+((* else *))
 \textbf{Supervision summary:}
 \begin{itemize}
 ((*- if doctoral_ongoing_count *))
@@ -172,6 +182,9 @@ Career stage: ((( personal.career_stage )))
 \item Master's theses (supervisor): ((( masters_completed_count ))) completed.
 ((*- endif *))
 \end{itemize}
+((*- endif *))
+
+((*- if not short *))
 
 \textbf{Supervised theses:}
 \begin{itemize}
@@ -179,6 +192,7 @@ Career stage: ((( personal.career_stage )))
 \item ((( sup.type ))), ``((( sup.title )))'', ((( sup.institution ))), ((( sup.period ))).
 ((*- endfor *))
 \end{itemize}
+((*- endif *))
 
 ((*- if leadership *))
 \textbf{Leadership experience:}
@@ -247,12 +261,17 @@ Career stage: ((( personal.career_stage )))
 
 ((*- if peer_reviews *))
 \medskip
+((*- if short *))
+
+\textbf{Referee for scientific publications:} ((( peer_reviews_total ))) reviews for ((* for pr in peer_reviews *))((* if loop.last and not loop.first *)) and ((* elif not loop.first *)), ((* endif *))\textit{((( pr.journal )))}((* endfor *)).
+((*- else *))
 \textbf{Referee for scientific publications:}
 \begin{itemize}
 ((*- for pr in peer_reviews *))
 \item \textit{((( pr.journal )))}: ((( pr.summary ))).
 ((*- endfor *))
 \end{itemize}
+((*- endif *))
 ((*- endif *))
 
 %% Scientific and societal impact
@@ -278,7 +297,7 @@ Career stage: ((( personal.career_stage )))
 \end{itemize}
 ((*- endif *))
 
-((*- if tutorials *))
+((*- if tutorials and not short *))
 \medskip
 \textbf{Tutorials and continuing education:}
 \begin{itemize}
@@ -299,6 +318,7 @@ Career stage: ((( personal.career_stage )))
 \end{itemize}
 ((*- endif *))
 
+((*- if not short *))
 %% Publications
 \section*{Publications}
 
@@ -318,6 +338,7 @@ Total: ((( publications_total ))) peer-reviewed publications, of which ((( publi
 \item ((( ms.authors ))), ``((( ms.title )))'', \textit{((( ms.journal )))}, ((( ms.status ))).
 ((*- endfor *))
 \end{enumerate}
+((*- endif *))
 ((*- endif *))
 
 %% Page counter for header
