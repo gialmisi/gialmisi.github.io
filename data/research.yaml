@@ -12,6 +12,7 @@ projects:
       work package, I continue to research the concept and application of
       explainable and interactive multiobjective optimization, a topic I
       explored in my doctoral thesis.
+    application_role: "contributed to the application; work-package lead"
     include: [website, cv]
   - name: "Logistics order-supply chain modelling and optimization"
     organization: University of Jyväskylä, Tietoevry
@@ -38,6 +39,7 @@ projects:
       contributed to studies related to lot-sizing, and researching the semantic
       distances of icons in user interfaces for interactive multiobjective
       optimization methods.
+    application_role: "researcher; not involved in the application"
     include: [website, cv]
   - name: "DESDEO"
     full_title: "Decision Support for Computationally Demanding Optimization Problems"
@@ -67,6 +69,8 @@ positions:
   - position: Post-doctoral Researcher
     organization: Multiobjective Optimization Group, University of Jyväskylä, Finland
     period: 2024, ongoing
+    # RCF CV only: start and end date, with the current contract
+    rcf_period: "2024 - 31 July 2030 (current contract from 1 August 2026)"
     details: >
       I am working in the Research Council of Finland funded project DESIDES.
       My main research interest is continuing the line of work I established in

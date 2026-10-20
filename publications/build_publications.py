@@ -1,6 +1,7 @@
 """Build RCF publication list from YAML data files."""
 
 import argparse
+import re
 import sys
 from collections import OrderedDict
 from datetime import date
@@ -195,6 +196,21 @@ def build_publications(rcf_year=None):
         elif isinstance(obj, dict):
             return {k: escape_data(v) for k, v in obj.items()}
         return obj
+
+    # Bare DOI (e.g. 10.1002/mcda.70010) from the doi field, which may hold a doi.org or publisher URL.
+    def add_bare_doi(obj):
+        if isinstance(obj, dict):
+            if obj.get("doi"):
+                m = re.search(r"10\.\d{4,9}/\S+", str(obj["doi"]))
+                if m:
+                    obj["doi_bare"] = m.group(0)
+            for v in obj.values():
+                add_bare_doi(v)
+        elif isinstance(obj, list):
+            for v in obj:
+                add_bare_doi(v)
+
+    add_bare_doi(grouped)
 
     escaped_personal = escape_data(personal)
     escaped_grouped = escape_data(grouped)

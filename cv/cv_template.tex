@@ -70,7 +70,7 @@
 %% Personal details
 \section*{Personal details and the date of the CV}
 
-((( personal.name ))) \\
+((* if rcf and personal.rcf_name *))((( personal.rcf_name )))((* else *))((( personal.name )))((* endif *)) \\
 ORCID: \href{https://orcid.org/((( personal.orcid )))}{((( personal.orcid )))} \\
 Date of CV: \today
 
@@ -79,7 +79,7 @@ Date of CV: \today
 
 \begin{itemize}
 ((*- for edu in educations *))
-\item ((( edu.year ))), ((( edu.degree ))), ((( edu.institution )))((*- if edu.location *)), ((( edu.location )))((*- endif *)).
+\item ((* if rcf and edu.certificate_date *))((( edu.certificate_date )))((* else *))((( edu.year )))((* endif *)), ((( edu.degree ))), ((( edu.institution )))((*- if edu.location *)), ((( edu.location )))((*- endif *)).
 ((*- endfor *))
 \end{itemize}
 ((*- if educations and educations[0].contact *))
@@ -116,7 +116,7 @@ Contact details of the organisation that granted the highest degree: ((( educati
 \section*{Current employment}
 
 ((*- set current = positions[0] *))
-((( current.period ))), ((( current.position ))), ((( current.organization )))
+((* if rcf and current.rcf_period *))((( current.rcf_period )))((* else *))((( current.period )))((* endif *)), ((( current.position ))), ((( current.organization )))
 ((*- if personal.career_stage *))
 
 Career stage: ((( personal.career_stage )))
@@ -150,7 +150,7 @@ Career stage: ((( personal.career_stage )))
 \item ((( fund.date ))), ((( fund.name ))), ((( fund.organization )))((*- if fund.type *)). Type: ((( fund.type )))((*- endif *))((*- if fund.amount *)). Amount: ((( fund.amount )))((*- endif *))((*- if fund.role *)). Role: ((( fund.role )))((*- endif *)).
 ((*- endfor *))
 ((*- for proj in projects *))
-\item ((( proj.period ))), ((( proj.name )))((*- if proj.full_title *)) -- ((( proj.full_title )))((*- endif *)) (project no. ((( proj.id )))), ((( proj.organization )))((*- if proj.type *)). Type: ((( proj.type )))((*- endif *))((*- if proj.amount *)). Amount: ((( proj.amount )))((*- endif *))((*- if proj.principal_investigator *)). Principal investigator: ((( proj.principal_investigator )))((*- endif *)). Role: researcher.
+\item ((( proj.period ))), ((( proj.name )))((*- if proj.full_title *)) -- ((( proj.full_title )))((*- endif *)) (project no. ((( proj.id )))), ((( proj.organization )))((*- if proj.type *)). Type: ((( proj.type )))((*- endif *))((*- if proj.amount *)). Amount: ((( proj.amount )))((*- endif *))((*- if proj.principal_investigator *)). Principal investigator: ((( proj.principal_investigator )))((*- endif *)). ((* if rcf and proj.application_role *))Role: ((( proj.application_role )))((* else *))Role: researcher((* endif *)).
 ((*- endfor *))
 \end{itemize}
 

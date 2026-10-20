@@ -16,9 +16,13 @@ TEMPLATE_PATH = Path(__file__).resolve().parent / "cv_template.tex"
 OUTPUT_DIR = Path(__file__).resolve().parent / "output"
 
 
+# Include tags accepted by filter_for_cv; --rcf adds "rcf" for entries meant only for RCF applications.
+CV_TAGS = {"cv"}
+
+
 def filter_for_cv(items):
-    """Filter a list of items, keeping only those with 'cv' in their include field."""
-    return [item for item in items if "cv" in item.get("include", ["website", "cv"])]
+    """Filter a list of items, keeping only those whose include field has a CV tag."""
+    return [item for item in items if CV_TAGS & set(item.get("include", ["website", "cv"]))]
 
 
 def load_all_data() -> dict:
@@ -108,14 +112,20 @@ def load_all_data() -> dict:
     return data
 
 
-def build_cv(short: bool = False, output_name: str = "cv.tex"):
+def build_cv(short: bool = False, output_name: str = "cv.tex", rcf: bool = False):
     """Build the CV by rendering the Jinja2 LaTeX template with YAML data.
 
     In short mode the publications and manuscripts sections are left out, and
-    the referee section is collapsed into a single sentence.
+    the referee section is collapsed into a single sentence. RCF mode (implies
+    short) also prints degree certificate dates, the role in preparing each
+    funding application, and entries tagged "rcf".
     """
+    if rcf:
+        short = True
+        CV_TAGS.add("rcf")
     data = load_all_data()
     data["short"] = short
+    data["rcf"] = rcf
 
     # Set up Jinja2 with LaTeX-friendly delimiters
     env = jinja2.Environment(
@@ -175,6 +185,17 @@ if __name__ == "__main__":
         default=None,
         help="output file name (default: cv.tex, or cv_short.tex with --short)",
     )
+    parser.add_argument(
+        "--rcf",
+        type=int,
+        default=None,
+        metavar="YEAR",
+        help="RCF application CV for the given call year (implies --short); output cv_RCF<YEAR>_<surname>.tex",
+    )
     args = parser.parse_args()
-    default_name = "cv_short.tex" if args.short else "cv.tex"
-    build_cv(short=args.short, output_name=args.output or default_name)
+    if args.rcf:
+        surname = load_yaml("personal.yaml")["name"].split(",")[0].strip()
+        default_name = f"cv_RCF{args.rcf}_{surname}.tex"
+    else:
+        default_name = "cv_short.tex" if args.short else "cv.tex"
+    build_cv(short=args.short, output_name=args.output or default_name, rcf=bool(args.rcf))

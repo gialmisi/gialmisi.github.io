@@ -35,7 +35,7 @@ conferences:
     slides: "data/slides/EURO2024.pdf"
     include: [website]
   - title: "Recent developments in integrating explainability with interactive multiobjective optimization methods"
-    event: "27th International Conference on Multiple Criteria Decision Making, Hammamet, Tunisia Kingdom"
+    event: "27th International Conference on Multiple Criteria Decision Making, Hammamet, Tunisia"
     date: "2024"
     slides: "data/slides/MCDM2024.pdf"
     include: [website]

@@ -1,5 +1,11 @@
 supervisions:
   - type: "Doctoral thesis (co-supervisor)"
+    student: "Lehrbäck J."
+    title: "AI-assisted Interactive Multiobjective Decision Support in Forest Management"
+    institution: "University of Jyväskylä, Finland"
+    period: "2026, ongoing"
+    include: [cv]
+  - type: "Doctoral thesis (co-supervisor)"
     student: "Palomäki S."
     title: "From individual preferences to landscape sustainability: decision support in Finnish private forest management"
     institution: "University of Helsinki, Finland"

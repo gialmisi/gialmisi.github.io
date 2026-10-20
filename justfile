@@ -32,5 +32,15 @@ publications year="":
     pdflatex -interaction=nonstopmode "$texfile"
     pdflatex -interaction=nonstopmode "$texfile"
 
+# Build the RCF application CV (3 pages, certificate dates, funding-application roles, RCF-only entries)
+cv-rcf year:
+    uv run python cv/build_cv.py --rcf {{year}}
+    cd cv/output && pdflatex -interaction=nonstopmode cv_RCF{{year}}_Misitano.tex && pdflatex -interaction=nonstopmode cv_RCF{{year}}_Misitano.tex
+
+# Build the RCF application documents: CV and publication list for the given call year
+rcf year: (cv-rcf year)
+    uv run python publications/build_publications.py --year {{year}}
+    cd publications/output && pdflatex -interaction=nonstopmode publications_RCF{{year}}_Misitano.tex && pdflatex -interaction=nonstopmode publications_RCF{{year}}_Misitano.tex
+
 # Build both CV and publication list
 docs: cv publications

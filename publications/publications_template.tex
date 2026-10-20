@@ -82,7 +82,7 @@ Date of list: \today
 \textbf{((( sub.code ))). ((( sub.name )))}
 \begin{enumerate}
 ((*- for pub in sub.publications *))
-\item ((( pub.authors ))), ``((( pub.title )))'', \textit{((( pub.journal )))}, ((( pub.year ))).
+\item ((( pub.authors ))), ``((( pub.title )))'', \textit{((( pub.journal )))}((*- if pub.publisher *)), ((( pub.publisher )))((*- endif *)), ((( pub.year )))((*- if pub.doi_bare *)), doi:((( pub.doi_bare )))((*- endif *)).
 ((*- endfor *))
 \end{enumerate}
 ((*- endfor *))
