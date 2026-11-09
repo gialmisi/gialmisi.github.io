@@ -10,6 +10,7 @@ dependencies = [
     "mkdocs-materialx>=10.1",
     "mkdocs-include-markdown-plugin>=6.2.1",
     "mkdocs-macros-plugin>=1.0.5",
+    "rust-just>=1.59.0",
 ]
 
 [project.optional-dependencies]

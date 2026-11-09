@@ -68,7 +68,7 @@ teachings:
       Various physics courses. I have been working as a teaching assistant,
       occasionally as a lecturer as well, in around a dozen university physics
       courses, both at an introductory and at an advanced level.
-    include: [website, cv]
+    include: [website]  # CV: merged entry below
   - course: "Physics Student Laboratory"
     institution: "University of Jyväskylä"
     position: "Teaching Assistant"
@@ -81,4 +81,12 @@ teachings:
       corresponding teacher in grading and supervising a larger laboratory
       assignment, where students must write a full report on a physics
       experiment and its results.
-    include: [website, cv]
+    include: [website]  # CV: merged entry below
+  - course: "Bachelor- and master-level physics courses and the Physics Student Laboratory"
+    institution: "University of Jyväskylä"
+    position: "Teaching Assistant, Lecturer"
+    period: "2015 - 2024"
+    details: >-
+      Teaching assistant, occasionally lecturer, in around a dozen physics
+      courses and in the Physics Department's student laboratory.
+    include: [cv]

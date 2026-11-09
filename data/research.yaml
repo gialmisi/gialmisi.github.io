@@ -12,7 +12,7 @@ projects:
       work package, I continue to research the concept and application of
       explainable and interactive multiobjective optimization, a topic I
       explored in my doctoral thesis.
-    application_role: "contributed to the application; work-package lead"
+    application_role: "wrote large parts of the application; work-package lead"
     include: [website, cv]
   - name: "Logistics order-supply chain modelling and optimization"
     organization: University of Jyväskylä, Tietoevry
@@ -55,6 +55,13 @@ projects:
     include: [website]
 
 visits:
+  - institution: "University of Manchester and University of Warwick"
+    location: "United Kingdom"
+    period: "October - November 2026"
+    details: >
+      One-month research visit to the University of Manchester and the
+      University of Warwick.
+    include: [website, cv]
   - institution: "Delft University of Technology"
     location: "Delft, the Netherlands"
     period: "January - February 2025"

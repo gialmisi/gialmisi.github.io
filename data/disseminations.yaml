@@ -77,7 +77,7 @@ invitations:
     event: "Nokia Foundation Awards Ceremony 2022, Aalto University"
     date: "2022"
     slides: "data/slides/millenium_pitch.pdf"
-    include: [website, cv]
+    include: [website]  # CV: listed once, as the award (activities.yaml)
   - title: "Explainable artificial intelligence and explainable multiobjective optimization"
     event: "CCLS seminar, University of Leiden"
     date: "2022"
@@ -123,7 +123,7 @@ media:
     venue: "Millennium Innovation Forum 2022, Nokia Foundation"
     date: "2022"
     link: "https://www.youtube.com/watch?v=Rt1YKWaNG94"
-    include: [website, cv]
+    include: [website]  # CV: listed once, as the award (activities.yaml)
 
 tutorials:
   - title: "Parempia kompromissiratkaisuja ja päätöksiä monitavoiteoptimoinnin avulla"
