@@ -2,6 +2,7 @@
 
 import argparse
 import re
+from datetime import date
 import sys
 from pathlib import Path
 
@@ -112,6 +113,27 @@ def load_all_data() -> dict:
     return data
 
 
+# RCF application (British English, as in the rest of the application): the applicant's own descriptions in
+# British spelling, en dashes in date ranges. Titles of papers, talks, courses and the group's name keep their spelling.
+RCF_BRITISH = [
+    ("framework for interactive multiobjective optimization", "framework for interactive multiobjective optimisation"),
+    ("explainable learnable evolutionary multiobjective optimization", "explainable learnable evolutionary multiobjective optimisation"),
+    ("work packages on explainable interactive multiobjective optimization", "work packages on explainable interactive multiobjective optimisation"),
+    ("Lecturer and organizer", "Lecturer and organiser"),
+    ("Bachelor- and master-level", "Bachelor- and master-level".replace("Bachelor", "bachelor")),
+]
+_MONTH = r"(?:January|February|March|April|May|June|July|August|September|October|November|December)"
+
+
+def rcf_style(tex: str) -> str:
+    for a, b in RCF_BRITISH:
+        tex = tex.replace(a, b)
+    # "2020 - 2024", "October - November 2026" -> unspaced en dash; "2024 - 31 July 2030" -> spaced en dash
+    tex = re.sub(rf"\b(\d{{4}}|{_MONTH}) - (\d{{4}}|{_MONTH})\b", r"\1--\2", tex)
+    tex = re.sub(r"\b(\d{4}) - (\d)", r"\1 -- \2", tex)
+    return tex
+
+
 def build_cv(short: bool = False, output_name: str = "cv.tex", rcf: bool = False):
     """Build the CV by rendering the Jinja2 LaTeX template with YAML data.
 
@@ -126,6 +148,16 @@ def build_cv(short: bool = False, output_name: str = "cv.tex", rcf: bool = False
     data = load_all_data()
     data["short"] = short
     data["rcf"] = rcf
+    if rcf:
+        today = date.today()
+        data["cv_date"] = f"{today.day} {today:%B %Y}"
+        # One funding list, most recent first (by start year), as the RCF CV template asks
+        def start_year(x, k):
+            m = re.search(r"\d{4}", str(x.get(k, "")))
+            return int(m.group(0)) if m else 0
+        items = [{"kind": "fund", "item": f, "y": start_year(f, "date")} for f in data["fundings"]]
+        items += [{"kind": "proj", "item": p, "y": start_year(p, "period")} for p in data["projects"]]
+        data["rcf_funding"] = sorted(items, key=lambda i: -i["y"])
 
     # Set up Jinja2 with LaTeX-friendly delimiters
     env = jinja2.Environment(
@@ -166,6 +198,8 @@ def build_cv(short: bool = False, output_name: str = "cv.tex", rcf: bool = False
     escaped_data = escape_data(data)
 
     output = template.render(**escaped_data)
+    if rcf:
+        output = rcf_style(output)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_file = OUTPUT_DIR / output_name

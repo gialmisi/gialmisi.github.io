@@ -72,7 +72,7 @@
 
 ((* if rcf and personal.rcf_name *))((( personal.rcf_name )))((* else *))((( personal.name )))((* endif *)) \\
 ORCID: \href{https://orcid.org/((( personal.orcid )))}{((( personal.orcid )))} \\
-Date of CV: \today
+Date of CV: ((* if rcf *))((( cv_date )))((* else *))\today((* endif *))
 
 %% Degrees
 \section*{Degrees}
@@ -146,12 +146,22 @@ Career stage: ((( personal.career_stage )))
 \section*{Research funding and grants}
 
 \begin{itemize}
+((*- if rcf *))
+((*- for it in rcf_funding *))
+((*- if it.kind == 'fund' *))((* set fund = it.item *))
+\item ((( fund.date ))), ((( fund.name ))), ((( fund.organization )))((*- if fund.type *)). Type: ((( fund.type )))((*- endif *))((*- if fund.amount *)). Amount: ((( fund.amount )))((*- endif *))((*- if fund.role *)). Role: ((( fund.role )))((*- endif *)).
+((*- else *))((* set proj = it.item *))
+\item ((( proj.period ))), ((( proj.name )))((*- if proj.full_title *)) -- ((( proj.full_title )))((*- endif *)) (project no. ((( proj.id )))), ((( proj.organization )))((*- if proj.type *)). Type: ((( proj.type )))((*- endif *))((*- if proj.amount *)). Amount: ((( proj.amount )))((*- endif *))((*- if proj.principal_investigator *)). Principal investigator: ((( proj.principal_investigator )))((*- endif *)). ((* if rcf and proj.application_role *))Role: ((( proj.application_role )))((* else *))Role: researcher((* endif *)).
+((*- endif *))
+((*- endfor *))
+((*- else *))
 ((*- for fund in fundings *))
 \item ((( fund.date ))), ((( fund.name ))), ((( fund.organization )))((*- if fund.type *)). Type: ((( fund.type )))((*- endif *))((*- if fund.amount *)). Amount: ((( fund.amount )))((*- endif *))((*- if fund.role *)). Role: ((( fund.role )))((*- endif *)).
 ((*- endfor *))
 ((*- for proj in projects *))
 \item ((( proj.period ))), ((( proj.name )))((*- if proj.full_title *)) -- ((( proj.full_title )))((*- endif *)) (project no. ((( proj.id )))), ((( proj.organization )))((*- if proj.type *)). Type: ((( proj.type )))((*- endif *))((*- if proj.amount *)). Amount: ((( proj.amount )))((*- endif *))((*- if proj.principal_investigator *)). Principal investigator: ((( proj.principal_investigator )))((*- endif *)). ((* if rcf and proj.application_role *))Role: ((( proj.application_role )))((* else *))Role: researcher((* endif *)).
 ((*- endfor *))
+((*- endif *))
 \end{itemize}
 
 %% Research output
@@ -224,7 +234,7 @@ Career stage: ((( personal.career_stage )))
 %% Other key academic merits
 \section*{Other key academic merits}
 
-\textbf{Positions of trust and memberships in scientific organizations:}
+\textbf{Positions of trust and memberships in scientific ((* if rcf *))organisations((* else *))organizations((* endif *)):}
 \begin{itemize}
 ((*- for pos in activity_positions *))
 \item ((( pos.period ))), ((( pos.position ))), ((( pos.organization ))).

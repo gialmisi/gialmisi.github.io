@@ -215,10 +215,14 @@ def build_publications(rcf_year=None):
     escaped_personal = escape_data(personal)
     escaped_grouped = escape_data(grouped)
 
+    today = date.today()
     output = template.render(
         personal=escaped_personal,
         grouped=escaped_grouped,
+        list_date=f"{today.day} {today:%B %Y}",
     )
+    # En dashes in page and issue ranges ("835-856", "(2-3)"); DOIs and the ORCID are untouched
+    output = re.sub(r"(?<=[ (,])(\d+)-(\d+)(?=[},);\s])", r"\1--\2", output)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_filename = f"publications_RCF{rcf_year}_{surname}"
