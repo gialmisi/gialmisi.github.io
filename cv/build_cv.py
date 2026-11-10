@@ -120,6 +120,10 @@ RCF_BRITISH = [
     ("explainable learnable evolutionary multiobjective optimization", "explainable learnable evolutionary multiobjective optimisation"),
     ("work packages on explainable interactive multiobjective optimization", "work packages on explainable interactive multiobjective optimisation"),
     ("Lecturer and organizer", "Lecturer and organiser"),
+    # Degrees in both the Finnish and the international system (RCF CV guidelines)
+    ("PhD, Computational Science", "PhD (filosofian tohtori, FT), Computational Science"),
+    ("MSc, Computer Science", "MSc (filosofian maisteri, FM), Computer Science"),
+    ("BSc, Physics", "BSc (luonnontieteiden kandidaatti, LuK), Physics"),
     ("Bachelor- and master-level", "Bachelor- and master-level".replace("Bachelor", "bachelor")),
 ]
 _MONTH = r"(?:January|February|March|April|May|June|July|August|September|October|November|December)"
@@ -158,6 +162,8 @@ def build_cv(short: bool = False, output_name: str = "cv.tex", rcf: bool = False
         items = [{"kind": "fund", "item": f, "y": start_year(f, "date")} for f in data["fundings"]]
         items += [{"kind": "proj", "item": p, "y": start_year(p, "period")} for p in data["projects"]]
         data["rcf_funding"] = sorted(items, key=lambda i: -i["y"])
+        # Newest first, as in every other section
+        data["media"] = sorted(data["media"], key=lambda m: -start_year(m, "date"))
 
     # Set up Jinja2 with LaTeX-friendly delimiters
     env = jinja2.Environment(

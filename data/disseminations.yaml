@@ -79,7 +79,7 @@ invitations:
     slides: "data/slides/millenium_pitch.pdf"
     include: [website]  # CV: listed once, as the award (activities.yaml)
   - title: "Explainable artificial intelligence and explainable multiobjective optimization"
-    event: "CCLS seminar, University of Leiden"
+    event: "CCLS seminar, Leiden University"
     date: "2022"
     slides: "data/slides/CCLS2022.pdf"
     include: [website, cv]

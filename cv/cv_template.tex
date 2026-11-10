@@ -68,7 +68,7 @@
 \begin{document}
 
 %% Personal details
-\section*{Personal details and the date of the CV}
+\section*{((* if rcf *))Personal details and date of CV((* else *))Personal details and the date of the CV((* endif *))}
 
 ((* if rcf and personal.rcf_name *))((( personal.rcf_name )))((* else *))((( personal.name )))((* endif *)) \\
 ORCID: \href{https://orcid.org/((( personal.orcid )))}{((( personal.orcid )))} \\
